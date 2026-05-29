@@ -216,7 +216,7 @@ export function Dedications() {
           title="General Donations"
           subtitle="Every gift — of any size — builds Mikvah Laurentian and earns a place on our Wall of Honor."
         >
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {generalDonationTiers.map((t) => (
               <GeneralDonationCard key={t.id} tier={t} onSelect={(t) => { setSelectedTier(t); setDonationOpen(true); }} />
             ))}

@@ -38,7 +38,7 @@ export function Header() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between h-[88px] lg:h-[100px]">
+        <div className="flex items-center justify-between h-[76px] sm:h-[88px] lg:h-[100px]">
 
           {/* Logo — white over hero, blue when scrolled */}
           <a href="#" className="flex items-center flex-shrink-0">
@@ -49,7 +49,7 @@ export function Header() {
               width={260}
               height={85}
               className={cn(
-                "h-[72px] lg:h-[84px] w-auto object-contain absolute transition-opacity duration-300",
+                "h-[56px] sm:h-[68px] lg:h-[80px] w-auto object-contain absolute transition-opacity duration-300",
                 scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
               )}
               priority
@@ -62,7 +62,7 @@ export function Header() {
               width={260}
               height={85}
               className={cn(
-                "h-[72px] lg:h-[84px] w-auto object-contain transition-opacity duration-300",
+                "h-[56px] sm:h-[68px] lg:h-[80px] w-auto object-contain transition-opacity duration-300",
                 scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
               )}
               unoptimized
@@ -102,7 +102,7 @@ export function Header() {
 
           {/* Mobile toggle */}
           <button
-            className={cn("lg:hidden p-2 transition-colors", scrolled ? "text-[#1A2B38]" : "text-white")}
+            className={cn("lg:hidden p-3 transition-colors", scrolled ? "text-[#1A2B38]" : "text-white")}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >

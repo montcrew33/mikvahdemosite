@@ -59,7 +59,7 @@ export function DedicationModal({ dedication, open, onClose }: DedicationModalPr
 
   return (
     <Modal open={open} onClose={handleClose} maxWidth="max-w-xl">
-      <div className="px-8 py-8">
+      <div className="px-5 sm:px-8 py-7 sm:py-8">
         {submitted ? (
           <div className="text-center py-8">
             <div className="text-4xl mb-4">✦</div>

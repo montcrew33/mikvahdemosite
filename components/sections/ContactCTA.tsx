@@ -100,7 +100,7 @@ export function ContactCTA({ onDedicate, onDonate }: ContactCTAProps) {
                 <>
                   <h3 className="font-serif text-xl text-[#1A2B38] mb-6">Get in touch</h3>
                   <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs tracking-wide uppercase text-[#5A7A85] mb-1.5">
                           First name <span className="text-[#5BC8C8]">*</span>

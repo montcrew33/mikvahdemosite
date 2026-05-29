@@ -39,7 +39,7 @@ export function Hero({ onDedicate, onDonate }: HeroProps) {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-20 lg:pb-28">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pt-20 sm:pt-24 pb-16 lg:pb-28">
         <motion.div
           className="max-w-[560px]"
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export function Hero({ onDedicate, onDonate }: HeroProps) {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <button
               onClick={onDedicate}
               className="px-6 py-3 bg-[#5BC8C8] text-white text-sm font-semibold hover:bg-[#3DA8A8] transition-colors rounded-sm shadow-md"

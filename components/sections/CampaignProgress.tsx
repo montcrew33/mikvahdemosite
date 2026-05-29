@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { campaignData } from "@/data/campaign";
+
+const SKETCH_IMAGE = "https://i.imgur.com/zqDFHux.jpg";
 
 function formatCurrency(n: number) {
   return new Intl.NumberFormat("en-CA", {
@@ -20,8 +23,28 @@ export function CampaignProgress() {
       style={{ background: "#FFFFFF", borderBottom: "1px solid #D0E5E5" }}
     >
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          {/* Left — building sketch */}
+          <motion.div
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65 }}
+            className="w-full"
+          >
+            <div className="relative w-full aspect-square overflow-hidden rounded-sm">
+              <Image
+                src={SKETCH_IMAGE}
+                alt="Architectural sketch of Mikvah Laurentian"
+                fill
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+          </motion.div>
+
+          {/* Right — copy + progress */}
           <div>
             <h2 className="font-serif text-3xl lg:text-4xl text-[#1A2B38] leading-snug mb-3">
               Building Mikvah Laurentian, together.
@@ -31,7 +54,6 @@ export function CampaignProgress() {
               closer to opening the doors of this community's sacred mikvah.
             </p>
 
-            {/* Progress */}
             <div>
               <div className="flex items-baseline justify-between mb-3">
                 <p className="font-serif text-xl text-[#1A2B38]">
@@ -54,31 +76,6 @@ export function CampaignProgress() {
             </div>
           </div>
 
-          {/* Right — stat grid */}
-          <div className="grid grid-cols-2 gap-px bg-[#D0E5E5] border border-[#D0E5E5]">
-            {[
-              { label: "Raised",     value: formatCurrency(campaignData.raised),    color: "#1A2B38" },
-              { label: "Goal",       value: formatCurrency(campaignData.goal),      color: "#1A2B38" },
-              { label: "Funded",     value: `${campaignData.percentage}%`,          color: "#5BC8C8" },
-              { label: "Remaining",  value: formatCurrency(campaignData.remaining), color: "#1E3A8A" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                className="bg-white px-6 py-7 text-center"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-              >
-                <p className="font-serif text-2xl mb-1.5 leading-none" style={{ color: stat.color }}>
-                  {stat.value}
-                </p>
-                <p className="text-[11px] tracking-[0.14em] uppercase text-[#8AAAB5]">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
 
         {/* CTA row */}

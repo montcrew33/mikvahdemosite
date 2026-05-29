@@ -61,7 +61,7 @@ export function BuildingProgress() {
           {IMAGES.map((img, i) => (
             <motion.div
               key={img.id}
-              className="flex-shrink-0 w-80 sm:w-96"
+              className="flex-shrink-0 w-[72vw] sm:w-80 lg:w-96"
               initial={{ opacity: 0, x: 16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}

@@ -15,7 +15,7 @@ export function Footer() {
               alt="Living Waters — Mikvah Laurentian"
               width={200}
               height={66}
-              className="h-14 w-auto object-contain mb-4 brightness-0 invert"
+              className="h-12 sm:h-14 w-auto object-contain mb-4 brightness-0 invert"
               unoptimized
             />
             <p className="text-sm text-[#7A9AA8] max-w-xs leading-relaxed">
