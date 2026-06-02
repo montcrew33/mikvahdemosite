@@ -1,86 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  /* Backgrounds */
-  --bg:           #FFFFFF;
-  --bg-soft:      #F3FAFA;
-  --bg-teal:      #E6F4F4;
-  --bg-dark:      #1A2B38;
+  /* ── Backgrounds ── warm linen / parchment */
+  --bg:           #FCFBF8;
+  --bg-soft:      #F5F3EE;
+  --bg-cream:     #FAF7F2;
+  --bg-stone:     #EDE9E0;
+  --bg-dark:      #1C1917;
 
-  /* Text */
-  --navy:         #1A2B38;
-  --navy-mid:     #2C4A55;
-  --text-muted:   #5A7A85;
-  --text-light:   #8AAAB5;
+  /* ── Text ── deep charcoal */
+  --charcoal:     #1C1917;
+  --charcoal-mid: #3D3830;
+  --text-muted:   #78716C;
+  --text-light:   #A8A29E;
 
-  /* Primary teal — mikvah water */
+  /* ── Gold accent ── primary brand */
+  --gold:         #B59A5A;
+  --gold-dark:    #8C7540;
+  --gold-light:   #D4BA7A;
+
+  /* ── Teal ── retained for progress / legacy elements only */
   --teal:         #5BC8C8;
   --teal-dark:    #3A9898;
-  --teal-deep:    #1E6870;
 
-  /* Progress navy */
+  /* ── Progress ── */
   --progress-fill: #1E3A8A;
 
-  /* Gold — kept minimal, eyebrow labels & ornaments only */
-  --gold:         #B9963A;
+  /* ── Borders ── warm stone */
+  --border:       #DDD8CF;
+  --border-light: #EDE9E0;
+  --border-card:  #E8E3DA;
 
-  /* Borders */
-  --border:       #D0E5E5;
-  --border-light: #E5F0F0;
-  --border-card:  #E0EAEA;
-
-  /* Cards */
+  /* ── Cards ── */
   --card-bg:      #FFFFFF;
 
-  --background: var(--bg);
-  --foreground: var(--navy);
+  --background:   var(--bg);
+  --foreground:   var(--charcoal);
 }
 
 @theme inline {
-  --color-background:   var(--bg);
-  --color-foreground:   var(--navy);
-  --font-sans:          var(--font-source-sans);
-  --font-serif:         var(--font-lora);
-  --color-teal:         var(--teal);
-  --color-navy:         var(--navy);
-  --color-gold:         var(--gold);
-  --color-border:       var(--border);
+  --color-background:  var(--bg);
+  --color-foreground:  var(--charcoal);
+  --font-sans:         var(--font-source-sans);
+  --font-serif:        var(--font-playfair);
+  --color-gold:        var(--gold);
+  --color-teal:        var(--teal);
+  --color-border:      var(--border);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
-  color: var(--navy);
+  color: var(--charcoal);
   font-family: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .font-serif {
-  font-family: var(--font-lora), "Lora", Georgia, serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
 ::-webkit-scrollbar        { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track  { background: var(--bg-soft); }
 ::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--teal); }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
 ::selection {
-  background: rgba(91, 200, 200, 0.2);
-  color: var(--navy);
+  background: rgba(181, 154, 90, 0.18);
+  color: var(--charcoal);
 }
 
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }

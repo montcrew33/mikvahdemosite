@@ -1,57 +1,30 @@
-"use client";
+import type { Metadata } from "next";
+import { HomeClient } from "@/components/HomeClient";
 
-import { useState } from "react";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/sections/Hero";
-import { CampaignProgress } from "@/components/sections/CampaignProgress";
-import { WhyThisMikvah } from "@/components/sections/WhyThisMikvah";
-import { PresentingMikvah } from "@/components/sections/PresentingMikvah";
-import { Dedications } from "@/components/sections/Dedications";
-import { WallOfHonor } from "@/components/sections/WallOfHonor";
-import { BuildingProgress } from "@/components/sections/BuildingProgress";
-import { ContactCTA } from "@/components/sections/ContactCTA";
-import { DonationModal } from "@/components/ui/DonationModal";
-import { generalDonationTiers } from "@/data/dedications";
+export const metadata: Metadata = {
+  title: "Mikvah Laurentian | Living Waters Capital Campaign",
+  description:
+    "Join the Sainte-Agathe Jewish Community in building Mikvah Laurentian — a sacred sanctuary for Taharah, Family Purity, and generations of Jewish life in the Laurentians.",
+  keywords: [
+    "Laurentians Mikvah",
+    "Sainte-Agathe Jewish Community",
+    "Taharah",
+    "Family Purity",
+    "Mikvah Laurentian",
+    "Jewish ritual bath Quebec",
+    "mikvah capital campaign",
+    "Laurentian Jewish community",
+  ],
+  openGraph: {
+    title: "Mikvah Laurentian | Living Waters Capital Campaign",
+    description:
+      "A sacred space for Taharah, renewal, and generations of Jewish family life. Join us in building Mikvah Laurentian.",
+    locale: "en_CA",
+    type: "website",
+  },
+  robots: { index: true, follow: true },
+};
 
 export default function HomePage() {
-  const [heroDonateOpen, setHeroDonateOpen] = useState(false);
-
-  const defaultTier = generalDonationTiers[0];
-
-  function scrollToDedications() {
-    document.getElementById("dedications")?.scrollIntoView({ behavior: "smooth" });
-  }
-
-  return (
-    <>
-      <Header />
-
-      <main className="overflow-x-hidden">
-        <Hero
-          onDedicate={scrollToDedications}
-          onDonate={() => setHeroDonateOpen(true)}
-        />
-        <CampaignProgress />
-        <WhyThisMikvah />
-        <PresentingMikvah />
-        <Dedications />
-        <WallOfHonor />
-        <BuildingProgress />
-        <ContactCTA
-          onDedicate={scrollToDedications}
-          onDonate={() => setHeroDonateOpen(true)}
-        />
-      </main>
-
-      <Footer />
-
-      {/* Global donation modal triggered from Hero / ContactCTA */}
-      <DonationModal
-        tier={heroDonateOpen ? defaultTier : null}
-        open={heroDonateOpen}
-        onClose={() => setHeroDonateOpen(false)}
-      />
-    </>
-  );
+  return <HomeClient />;
 }

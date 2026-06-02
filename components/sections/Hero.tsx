@@ -11,9 +11,9 @@ interface HeroProps {
 
 export function Hero({ onDedicate, onDonate }: HeroProps) {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* Full-bleed background image */}
+      {/* Full-bleed background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url("${HERO_IMAGE}")` }}
@@ -21,64 +21,62 @@ export function Hero({ onDedicate, onDonate }: HeroProps) {
         aria-label="Exterior rendering of Mikvah Laurentian"
       />
 
-      {/* Left-to-right gradient: darker behind text, fades right to preserve building */}
+      {/* Editorial dark overlay — no glassmorphism */}
+      <div className="absolute inset-0" style={{ background: "rgba(14,12,10,0.58)" }} />
       <div
         className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(18,32,44,0.86) 0%, rgba(18,32,44,0.72) 35%, rgba(18,32,44,0.38) 65%, rgba(18,32,44,0.12) 100%)",
-        }}
-      />
-      {/* Bottom vignette to ground the text block */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to top, rgba(18,32,44,0.55) 0%, transparent 40%)",
-        }}
+        style={{ background: "linear-gradient(to top, rgba(14,12,10,0.48) 0%, transparent 55%)" }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pt-20 sm:pt-24 pb-16 lg:pb-28">
+      {/* Centered content */}
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 lg:px-10 pt-28 pb-20 text-center">
         <motion.div
-          className="max-w-[560px]"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, ease: "easeOut" }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
-          {/* Headline */}
-          <h1 className="font-serif text-[clamp(2.75rem,5.5vw,4.25rem)] leading-[1.07] text-white mb-4">
-            Mikvah Laurentian
-          </h1>
-
-          {/* Subheadline */}
-          <p className="font-serif text-[clamp(1.1rem,2vw,1.35rem)] text-white/82 italic leading-[1.55] mb-4">
-            A new home for taharah, renewal, and generations of Jewish family life.
+          {/* Eyebrow */}
+          <p className="text-[10px] tracking-[0.3em] uppercase text-white/55 font-sans mb-6">
+            Mikvah Laurentian &mdash; Capital Campaign
           </p>
 
-          {/* Body */}
-          <p className="text-white/65 text-[0.97rem] leading-relaxed mb-8 max-w-md">
-            Together, we are building a sacred space for the Laurentian Jewish
-            community — a place of dignity, purity, and continuity.
+          {/* H1 */}
+          <h1
+            className="font-serif text-white leading-[1.08] mb-6"
+            style={{ fontSize: "clamp(2.8rem, 6.5vw, 5.25rem)" }}
+          >
+            Living Waters.
+            <br />
+            Living Relationships.
+          </h1>
+
+          {/* Decorative rule */}
+          <div className="flex items-center justify-center gap-4 mb-7">
+            <div className="h-px w-14 bg-white/28" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#B59A5A]/70" />
+            <div className="h-px w-14 bg-white/28" />
+          </div>
+
+          {/* Subheadline */}
+          <p
+            className="font-serif italic text-white/78 leading-relaxed mb-10 mx-auto"
+            style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)", maxWidth: "36rem" }}
+          >
+            Building a sanctuary for generations of Jewish family life
+            in the heart of the Laurentians.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={onDedicate}
-              className="px-6 py-3 bg-[#5BC8C8] text-white text-sm font-semibold hover:bg-[#3DA8A8] transition-colors rounded-sm shadow-md"
+              className="px-7 py-3.5 bg-white text-[#1C1917] text-sm font-semibold tracking-wide hover:bg-white/92 transition-colors"
             >
               Dedicate a Space
             </button>
             <button
               onClick={onDonate}
-              className="px-6 py-3 text-white text-sm font-semibold rounded-sm transition-colors"
-              style={{
-                background: "rgba(255,255,255,0.10)",
-                border: "1px solid rgba(255,255,255,0.38)",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
-              onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.10)")}
+              className="px-7 py-3.5 text-white text-sm font-semibold tracking-wide border border-white/48 hover:bg-white/10 transition-colors"
             >
               Make a Gift
             </button>
@@ -87,11 +85,9 @@ export function Hero({ onDedicate, onDonate }: HeroProps) {
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-7 right-10 hidden lg:flex flex-col items-center gap-2 text-white/28">
-        <div className="h-8 w-px bg-white/20" />
-        <p className="text-[9px] tracking-[0.32em] uppercase" style={{ writingMode: "vertical-rl" }}>
-          Scroll
-        </p>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
+        <p className="text-[9px] tracking-[0.3em] uppercase font-sans">Scroll</p>
+        <div className="h-8 w-px bg-white/22" />
       </div>
     </section>
   );

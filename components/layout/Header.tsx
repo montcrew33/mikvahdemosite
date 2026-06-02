@@ -5,21 +5,19 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Blue version — used on light/scrolled nav
-const LOGO_BLUE = "https://i.imgur.com/mFubCKO.png";
-// White version — used over the hero image
+const LOGO_BLUE  = "https://i.imgur.com/mFubCKO.png";
 const LOGO_WHITE = "https://i.imgur.com/Jfm4CIJ.png";
 
 const navItems = [
-  { label: "Vision", href: "#vision" },
-  { label: "Campaign", href: "#campaign" },
-  { label: "Dedications", href: "#dedications" },
+  { label: "Vision",       href: "#vision" },
+  { label: "Heritage",     href: "#heritage" },
+  { label: "Our Story",    href: "/history" },
+  { label: "Dedications",  href: "#dedications" },
   { label: "Wall of Honor", href: "#wall-of-honor" },
-  { label: "Updates", href: "#updates" },
 ];
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled]   = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -33,34 +31,29 @@ export function Header() {
       className={cn(
         "fixed top-0 inset-x-0 z-40 transition-all duration-300",
         scrolled
-          ? "bg-white/97 backdrop-blur-sm shadow-sm border-b border-[#D0E5E5]"
+          ? "bg-[#FCFBF8]/97 backdrop-blur-sm shadow-sm border-b border-[#DDD8CF]"
           : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-[76px] sm:h-[88px] lg:h-[100px]">
 
-          {/* Logo — white over hero, blue when scrolled */}
+          {/* Logo */}
           <a href="#" className="flex items-center flex-shrink-0">
-            {/* White logo: visible only over the hero (not scrolled) */}
             <Image
               src={LOGO_WHITE}
               alt="Living Waters — Mikvah Laurentian"
-              width={260}
-              height={85}
+              width={260} height={85}
               className={cn(
                 "h-[56px] sm:h-[68px] lg:h-[80px] w-auto object-contain absolute transition-opacity duration-300",
                 scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
               )}
-              priority
-              unoptimized
+              priority unoptimized
             />
-            {/* Blue logo: visible when scrolled */}
             <Image
               src={LOGO_BLUE}
               alt="Living Waters — Mikvah Laurentian"
-              width={260}
-              height={85}
+              width={260} height={85}
               className={cn(
                 "h-[56px] sm:h-[68px] lg:h-[80px] w-auto object-contain transition-opacity duration-300",
                 scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -76,8 +69,10 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-[#5BC8C8]",
-                  scrolled ? "text-[#1A2B38]" : "text-white drop-shadow-sm"
+                  "text-sm font-medium tracking-wide transition-colors",
+                  scrolled
+                    ? "text-[#3D3830] hover:text-[#1C1917]"
+                    : "text-white/85 hover:text-white drop-shadow-sm"
                 )}
               >
                 {item.label}
@@ -85,24 +80,27 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Donate CTA */}
+          {/* Book a Visit CTA */}
           <div className="hidden lg:block">
             <a
-              href="#dedications"
+              href="#"
               className={cn(
-                "px-5 py-2 text-sm font-semibold transition-colors rounded-sm",
+                "px-5 py-2 text-sm font-semibold tracking-wide transition-all border",
                 scrolled
-                  ? "bg-[#5BC8C8] text-white hover:bg-[#3DA8A8]"
-                  : "bg-white/15 border border-white/40 text-white hover:bg-white/25 backdrop-blur-sm"
+                  ? "border-[#1C1917] text-[#1C1917] hover:bg-[#1C1917] hover:text-[#FCFBF8]"
+                  : "border-white/65 text-white hover:bg-white/10"
               )}
             >
-              Donate
+              Book a Visit
             </a>
           </div>
 
           {/* Mobile toggle */}
           <button
-            className={cn("lg:hidden p-3 transition-colors", scrolled ? "text-[#1A2B38]" : "text-white")}
+            className={cn(
+              "lg:hidden p-3 transition-colors",
+              scrolled ? "text-[#1C1917]" : "text-white"
+            )}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -113,24 +111,24 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-[#D0E5E5]">
+        <div className="lg:hidden bg-[#FCFBF8] border-t border-[#DDD8CF]">
           <nav className="px-6 py-5 flex flex-col gap-4">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-[#2C4A55] hover:text-[#5BC8C8] transition-colors"
+                className="text-sm text-[#3D3830] hover:text-[#1C1917] transition-colors tracking-wide"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}
               </a>
             ))}
             <a
-              href="#dedications"
-              className="mt-2 px-5 py-2.5 bg-[#5BC8C8] text-white text-sm font-semibold text-center rounded-sm"
+              href="#"
+              className="mt-2 px-5 py-2.5 border border-[#1C1917] text-[#1C1917] text-sm font-semibold text-center tracking-wide hover:bg-[#1C1917] hover:text-[#FCFBF8] transition-colors"
               onClick={() => setMobileOpen(false)}
             >
-              Donate
+              Book a Visit
             </a>
           </nav>
         </div>

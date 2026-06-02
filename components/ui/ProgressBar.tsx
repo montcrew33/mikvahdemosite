@@ -11,7 +11,7 @@ export function ProgressBar({ percentage, className = "" }: ProgressBarProps) {
   return (
     <div
       className={`relative h-3 w-full overflow-hidden rounded-sm ${className}`}
-      style={{ background: "#D8E8E8" }}
+      style={{ background: "#E8E3DA" }}
       role="progressbar"
       aria-valuenow={percentage}
       aria-valuemin={0}
@@ -19,7 +19,7 @@ export function ProgressBar({ percentage, className = "" }: ProgressBarProps) {
     >
       <motion.div
         className="absolute inset-y-0 left-0 rounded-sm"
-        style={{ background: "linear-gradient(90deg, #1E3A8A 0%, #5BC8C8 100%)" }}
+        style={{ background: "linear-gradient(90deg, #1C1917 0%, #B59A5A 100%)" }}
         initial={{ width: 0 }}
         whileInView={{ width: `${percentage}%` }}
         viewport={{ once: true }}
