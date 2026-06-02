@@ -1,6 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+const PORTRAIT_SRC = "https://i.imgur.com/40CkMPD.jpg";
 
 export function ChanasSpace() {
   return (
@@ -13,39 +16,28 @@ export function ChanasSpace() {
         style={{ minHeight: "520px" }}
       >
 
-        {/* Left — portrait placeholder */}
+        {/* Left — Editorial Arch portrait */}
         <motion.div
-          className="relative flex items-stretch"
-          style={{ minHeight: "360px" }}
+          className="relative flex items-center justify-center py-16 lg:py-20"
+          style={{
+            background: "linear-gradient(135deg, #EDE9E0 0%, #DDD8CF 100%)",
+            minHeight: "360px",
+          }}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div
-            className="w-full h-full"
-            style={{
-              background: "linear-gradient(135deg, #EDE9E0 0%, #DDD8CF 100%)",
-              minHeight: "360px",
-            }}
-          >
-            {/* Elegant portrait placeholder */}
-            <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-12">
-              <div
-                className="w-28 h-28 rounded-full mb-2"
-                style={{ background: "#D4BA7A", opacity: 0.35 }}
-              />
-              <div
-                className="h-px w-16"
-                style={{ background: "#B59A5A", opacity: 0.4 }}
-              />
-              <p
-                className="text-[10px] tracking-[0.28em] uppercase mt-2"
-                style={{ color: "#A8A29E" }}
-              >
-                Portrait
-              </p>
-            </div>
+          {/* Arch-framed portrait — centered, constrained, 3:4 ratio */}
+          <div className="relative mx-auto w-64 max-w-[250px] aspect-[3/4] rounded-t-full rounded-b-md shadow-2xl overflow-hidden">
+            <Image
+              src={PORTRAIT_SRC}
+              alt="Chana Carlebach"
+              fill
+              className="object-cover object-center"
+              sizes="250px"
+              unoptimized
+            />
           </div>
         </motion.div>
 
@@ -88,8 +80,10 @@ export function ChanasSpace() {
           </p>
 
           <a
-            href="#"
-            className="inline-flex items-center gap-2 self-start px-6 py-2.5 border border-[#1C1917] text-[#1C1917] text-sm font-semibold tracking-wide hover:bg-[#1C1917] hover:text-[#FCFBF8] transition-colors"
+            href="https://instagram.com/chanacarlebach"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 self-start border border-slate-800 text-slate-800 bg-transparent rounded-md px-6 py-3 text-sm font-semibold tracking-wide hover:bg-slate-800 hover:text-white transition-colors duration-300"
           >
             Follow @chanacarlebach
           </a>
