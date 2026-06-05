@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -39,7 +40,7 @@ export function Header() {
         <div className="flex items-center justify-between h-[76px] sm:h-[88px] lg:h-[100px]">
 
           {/* Logo */}
-          <a href="/" className="flex items-center flex-shrink-0">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <Image
               src={LOGO_WHITE}
               alt="Living Waters — Mikvah Laurentian"
@@ -60,7 +61,7 @@ export function Header() {
               )}
               unoptimized
             />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-8">
