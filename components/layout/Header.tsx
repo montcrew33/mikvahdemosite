@@ -39,7 +39,7 @@ export function Header() {
         <div className="flex items-center justify-between h-[76px] sm:h-[88px] lg:h-[100px]">
 
           {/* Logo */}
-          <a href="#" className="flex items-center flex-shrink-0">
+          <a href="/" className="flex items-center flex-shrink-0">
             <Image
               src={LOGO_WHITE}
               alt="Living Waters — Mikvah Laurentian"
