@@ -35,19 +35,14 @@ export function Hero({ onDedicate, onDonate }: HeroProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          {/* Eyebrow */}
-          <p className="text-[10px] tracking-[0.3em] uppercase text-white/55 font-sans mb-6">
-            Mikvah Laurentian &mdash; Capital Campaign
-          </p>
-
           {/* H1 */}
           <h1
             className="font-serif text-white leading-[1.08] mb-6"
             style={{ fontSize: "clamp(2.8rem, 6.5vw, 5.25rem)" }}
           >
-            Living Waters.
+            Mikvah Laurentian
             <br />
-            Living Relationships.
+            Living Waters
           </h1>
 
           {/* Decorative rule */}
@@ -60,10 +55,10 @@ export function Hero({ onDedicate, onDonate }: HeroProps) {
           {/* Subheadline */}
           <p
             className="font-serif italic text-white/78 leading-relaxed mb-10 mx-auto"
-            style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)", maxWidth: "36rem" }}
+            style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)", maxWidth: "38rem" }}
           >
-            Building a sanctuary for generations of Jewish family life
-            in the heart of the Laurentians.
+            Securing the legacy of our newly completed sanctuary for
+            generations of Jewish family life in the heart of the Laurentians.
           </p>
 
           {/* CTAs */}

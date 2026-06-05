@@ -1,0 +1,59 @@
+SEO TO-DO — Mikvah Laurentian
+================================
+Last updated: June 2026
+
+OFF-SITE (do these first — no developer needed)
+-------------------------------------------------
+[ ] Google Business Profile
+    - business.google.com → claim/create "Mikvah Laurentian"
+    - Category: Religious Organization + Community Center
+    - Add Sainte-Agathe-des-Monts, QC address
+    - Add campaign email + phone
+    - Upload 5-10 photos (exterior, renderings, construction)
+    - Write 750-char description using: mikvah, Sainte-Agathe,
+      Laurentians, taharah, Family Purity, Jewish community
+
+[ ] Google Search Console
+    - search.google.com/search-console
+    - Verify domain via Vercel DNS TXT record
+    - Submit sitemap once built: https://yourdomain.com/sitemap.xml
+    - Monitor crawl errors + Core Web Vitals
+
+[ ] Backlinks / PR
+    - Submit to Chabad.org, JewishGen.org, JewishMontreal.com
+    - Submit to Quebec Jewish community directories
+    - Ask Chana Carlebach to link from Instagram bio
+    - Pitch CJN (Canadian Jewish News) for editorial mention
+    - Request reciprocal link from nearby Sainte-Agathe synagogue
+
+CODE CHANGES (developer)
+--------------------------
+[ ] Add metadataBase: new URL("https://yourdomain.com") to app/layout.tsx
+[ ] Create app/sitemap.ts — auto-generates /sitemap.xml
+[ ] Create app/robots.ts — auto-generates /robots.txt
+[ ] Design + add OG image 1200x630px → public/og-image.jpg
+    Configure in layout.tsx metadata.openGraph.images
+[ ] Add JSON-LD structured data:
+    - LocalBusiness / ReligiousOrganization (in layout or Footer)
+    - FAQPage schema (from VisitAccordion 4 Q&As)
+    - Article schema on /history page
+[ ] Add Twitter Card metadata to layout.tsx
+[ ] Add canonical URLs to page.tsx and history/page.tsx
+[ ] Add og:url to both pages
+[ ] Add article:published_time + article:author to /history metadata
+[ ] Create public/apple-touch-icon.png (180x180)
+[ ] Create public/icon.png (32x32 + 192x192)
+
+ANALYTICS
+----------
+[ ] Add Google Analytics 4 tag to layout.tsx
+    Track: pageviews, scroll depth, InfoDrawer opens,
+    Dedication section clicks
+
+NOTES
+------
+- Domain confirmed? Update metadataBase once live domain is set
+- All keyword targets: "Laurentians Mikvah", "Sainte-Agathe Jewish
+  Community", "Taharah", "Family Purity", "mikvah capital campaign"
+- /history page is a strong content SEO asset — consider adding more
+  long-form pages (e.g., /taharas-hamishpacha, /dedication-guide)

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronsLeftRight } from "lucide-react";
 
-const BEFORE_IMAGE = "https://i.imgur.com/evHkdw4.jpg"; // raw wood framing
-const AFTER_IMAGE  = "https://i.imgur.com/FhvraiV.jpg"; // finished immersion room
+const BEFORE_IMAGE = "https://i.imgur.com/gSDQQ5R.jpg"; // before
+const AFTER_IMAGE  = "https://i.imgur.com/DVBZdyr.jpg"; // finished mikvah building (hero image)
 
 export function BeforeAfterSlider() {
   const containerRef = useRef<HTMLDivElement>(null);

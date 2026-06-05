@@ -80,10 +80,19 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Book a Visit CTA */}
-          <div className="hidden lg:block">
+          {/* Booking Portal text link + Dedicate a Space button */}
+          <div className="hidden lg:flex items-center gap-5">
             <a
               href="#"
+              className={cn(
+                "text-sm font-semibold uppercase tracking-wider transition-colors",
+                scrolled ? "text-slate-500 hover:text-slate-900" : "text-slate-200 hover:text-white"
+              )}
+            >
+              Booking Portal ↗
+            </a>
+            <a
+              href="#dedications"
               className={cn(
                 "px-5 py-2 text-sm font-semibold tracking-wide transition-all border",
                 scrolled
@@ -91,7 +100,7 @@ export function Header() {
                   : "border-white/65 text-white hover:bg-white/10"
               )}
             >
-              Book a Visit
+              Dedicate a Space
             </a>
           </div>
 
@@ -125,10 +134,17 @@ export function Header() {
             ))}
             <a
               href="#"
-              className="mt-2 px-5 py-2.5 border border-[#1C1917] text-[#1C1917] text-sm font-semibold text-center tracking-wide hover:bg-[#1C1917] hover:text-[#FCFBF8] transition-colors"
+              className="text-sm font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-900 transition-colors"
               onClick={() => setMobileOpen(false)}
             >
-              Book a Visit
+              Booking Portal ↗
+            </a>
+            <a
+              href="#dedications"
+              className="mt-1 px-5 py-2.5 border border-[#1C1917] text-[#1C1917] text-sm font-semibold text-center tracking-wide hover:bg-[#1C1917] hover:text-[#FCFBF8] transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Dedicate a Space
             </a>
           </nav>
         </div>
