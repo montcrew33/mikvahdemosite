@@ -66,7 +66,6 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-[#A8A29E] transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-[#A8A29E] transition-colors">Terms of Service</a>
-            <p className="font-serif italic text-[#4A4240]">&ldquo;מי חנה — Living Waters&rdquo;</p>
           </div>
         </div>
       </div>

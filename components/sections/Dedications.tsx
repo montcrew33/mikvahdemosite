@@ -74,7 +74,7 @@ function DedicationCard({
           {isReserved ? (
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-[#B59A5A] flex-shrink-0" />
-              <p className="text-xs text-[#B59A5A] italic">Reserved with gratitude</p>
+              <p className="text-xs text-[#B59A5A] italic">Dedicated with gratitude</p>
             </div>
           ) : (
             <button

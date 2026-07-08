@@ -20,14 +20,6 @@ export interface GeneralDonationTier {
 
 export const majorDedications: Dedication[] = [
   {
-    id: "building-dedication",
-    name: "Building Dedication",
-    amount: null,
-    status: "reserved",
-    category: "major",
-    description: "The dedication of the entire building in perpetuity.",
-  },
-  {
     id: "womens-mikvah-room",
     name: "Women's Mikvah Room",
     amount: 180_000,
@@ -45,15 +37,6 @@ export const majorDedications: Dedication[] = [
     description: "A dedicated mikvah for men, built to the highest standards.",
   },
   {
-    id: "hvac",
-    name: "HVAC System",
-    amount: 100_000,
-    status: "available",
-    category: "major",
-    description:
-      "Climate control ensuring year-round comfort and code compliance.",
-  },
-  {
     id: "cornerstone",
     name: "Cornerstone",
     amount: 120_000,
@@ -61,6 +44,15 @@ export const majorDedications: Dedication[] = [
     category: "major",
     description:
       "Inscribed cornerstone marking the founding of this sacred space.",
+  },
+  {
+    id: "hvac",
+    name: "HVAC System",
+    amount: 100_000,
+    status: "available",
+    category: "major",
+    description:
+      "Climate control ensuring year-round comfort and code compliance.",
   },
   {
     id: "building-facade",
@@ -93,7 +85,7 @@ export const roomDedications: Dedication[] = [
     id: "dish-mikvah",
     name: "Dish Mikvah",
     amount: 54_000,
-    status: "available",
+    status: "reserved",
     category: "room",
     description: "Dedicated immersion facility for vessels and kelim.",
   },
@@ -133,9 +125,25 @@ export const roomDedications: Dedication[] = [
     id: "prep-room-3",
     name: "Preparation Room 3",
     amount: 50_000,
-    status: "available",
+    status: "reserved",
     category: "room",
     description: "Private preparation suite.",
+  },
+  {
+    id: "reception-room",
+    name: "Reception Room",
+    amount: 50_000,
+    status: "available",
+    category: "room",
+    description: "Welcoming foyer and reception area.",
+  },
+  {
+    id: "kitchen",
+    name: "Kitchen",
+    amount: 50_000,
+    status: "reserved",
+    category: "room",
+    description: "Fully equipped kitchen for community use.",
   },
   {
     id: "bridal-staircase",
@@ -146,28 +154,12 @@ export const roomDedications: Dedication[] = [
     description: "A graceful staircase leading to the immersion level.",
   },
   {
-    id: "reception-room",
-    name: "Reception Room",
-    amount: 40_000,
-    status: "available",
-    category: "room",
-    description: "Welcoming foyer and reception area.",
-  },
-  {
     id: "utility-area",
     name: "Utility Area",
     amount: 40_000,
     status: "available",
     category: "room",
     description: "Mechanical and utility infrastructure.",
-  },
-  {
-    id: "kitchen",
-    name: "Kitchen",
-    amount: 36_000,
-    status: "available",
-    category: "room",
-    description: "Fully equipped kitchen for community use.",
   },
   {
     id: "mens-changing-room",
@@ -181,21 +173,30 @@ export const roomDedications: Dedication[] = [
     id: "front-entrance",
     name: "Front Entrance",
     amount: 36_000,
-    status: "available",
+    status: "reserved",
     category: "room",
     description: "The welcoming gateway into Mikvah Laurentian.",
+  },
+  {
+    id: "patio",
+    name: "Patio",
+    amount: 36_000,
+    status: "available",
+    category: "room",
+    description: "Outdoor gathering space adjacent to the building.",
+  },
+  {
+    id: "treatment-room",
+    name: "Treatment Room",
+    amount: 36_000,
+    status: "available",
+    category: "room",
+    availableCount: 3,
+    description: "Private wellness and treatment rooms.",
   },
 ];
 
 export const communityDedications: Dedication[] = [
-  {
-    id: "patio",
-    name: "Patio",
-    amount: 30_000,
-    status: "available",
-    category: "community",
-    description: "Outdoor gathering space adjacent to the building.",
-  },
   {
     id: "mens-entrance",
     name: "Men's Entrance",
@@ -203,15 +204,6 @@ export const communityDedications: Dedication[] = [
     status: "available",
     category: "community",
     description: "Dedicated entrance for men's mikvah.",
-  },
-  {
-    id: "treatment-room",
-    name: "Treatment Room",
-    amount: 26_000,
-    status: "available",
-    category: "community",
-    availableCount: 3,
-    description: "Private wellness and treatment rooms.",
   },
   {
     id: "front-walkway",
@@ -231,21 +223,28 @@ export const communityDedications: Dedication[] = [
     description: "Interior hallways and corridors.",
   },
   {
-    id: "garage",
-    name: "Garage",
-    amount: 20_000,
-    status: "available",
-    category: "community",
-    availableCount: 18,
-    description: "Dedicated parking spaces for mikvah patrons.",
-  },
-  {
     id: "garage-door",
     name: "Garage Door",
     amount: null,
     status: "reserved",
     category: "community",
     description: "Main garage entry door.",
+  },
+  {
+    id: "fireplace",
+    name: "Fireplace",
+    amount: 10_000,
+    status: "available",
+    category: "community",
+    description: "A warm centerpiece for the gathering areas.",
+  },
+  {
+    id: "mezuzah",
+    name: "Mezuzah",
+    amount: 18_000,
+    status: "available",
+    category: "community",
+    description: "Sacred mezuzot affixed throughout Mikvah Laurentian.",
   },
   {
     id: "furnishings",
@@ -256,9 +255,25 @@ export const communityDedications: Dedication[] = [
     description: "Furniture, fixtures, and interior appointments.",
   },
   {
+    id: "garage",
+    name: "Garage",
+    amount: 20_000,
+    status: "available",
+    category: "community",
+    description: "Dedicated parking spaces for mikvah patrons.",
+  },
+  {
+    id: "laundry-station",
+    name: "Laundry Station",
+    amount: 10_000,
+    status: "available",
+    category: "community",
+    description: "In-building laundry facilities for linens and robes.",
+  },
+  {
     id: "door",
     name: "Door",
-    amount: 5_000,
+    amount: 7_770,
     status: "available",
     category: "community",
     availableCount: 26,
@@ -276,6 +291,7 @@ export const communityDedications: Dedication[] = [
 
 export const generalDonationTiers: GeneralDonationTier[] = [
   { id: "chai", amount: 180, label: "Chai — $180" },
+  { id: "double-chai-260", amount: 260, label: "$260" },
   { id: "double-chai", amount: 360, label: "Double Chai — $360" },
   { id: "triple-chai", amount: 540, label: "Triple Chai — $540" },
   { id: "four-chai", amount: 720, label: "Four Chai — $720" },
