@@ -6,8 +6,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const LOGO_BLUE  = "https://i.imgur.com/mFubCKO.png";
-const LOGO_WHITE = "https://i.imgur.com/Jfm4CIJ.png";
+const LOGO = "/miklogo.png";
 
 const navItems = [
   { label: "Vision",       href: "#vision" },
@@ -42,24 +41,14 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <Image
-              src={LOGO_WHITE}
+              src={LOGO}
               alt="Living Waters — Mikvah Laurentian"
               width={260} height={85}
               className={cn(
-                "h-[56px] sm:h-[68px] lg:h-[80px] w-auto object-contain absolute transition-opacity duration-300",
-                scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+                "h-[56px] sm:h-[68px] lg:h-[80px] w-auto object-contain transition-all duration-300",
+                scrolled ? "brightness-0" : "brightness-100"
               )}
-              priority unoptimized
-            />
-            <Image
-              src={LOGO_BLUE}
-              alt="Living Waters — Mikvah Laurentian"
-              width={260} height={85}
-              className={cn(
-                "h-[56px] sm:h-[68px] lg:h-[80px] w-auto object-contain transition-opacity duration-300",
-                scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
-              )}
-              unoptimized
+              priority
             />
           </Link>
 

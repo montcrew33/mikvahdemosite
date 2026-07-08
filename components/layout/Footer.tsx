@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const LOGO_URL = "https://i.imgur.com/mFubCKO.png";
+const LOGO_URL = "/miklogo.png";
 
 export function Footer() {
   return (
